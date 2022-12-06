@@ -24,7 +24,7 @@ spawn(
         local j =
             loadstring(game:HttpGet("https://raw.githubusercontent.com/zazazaza22/clone-devil-Hub/main/Devil%20Hub%20ui", true))()
         local k =
-            j:CreateWindow("YT - DEVIL Script", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+            j:CreateWindow("idk", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
         local l = k:CreateTab("Pick Up")
         getgenv().autopickupitems = false
         l:CreateToggle(
@@ -946,7 +946,53 @@ spawn(
                 end
             end
         )
-        getgenv().autopickupIron = false
+        getgenv().autopickupJelly = false
+        l:CreateToggle(
+            "Auto PickUp Jelly",
+            function(m)
+                getgenv().autopickupJelly = m
+                if m then
+                    spawn(
+                        function()
+                            while autopickupJelly do
+                                wait()
+                                pcall(
+                                    function()
+                                        local n = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                                        local o = game:GetService("ReplicatedStorage")
+                                        for b, c in pairs(game:GetService("Workspace"):GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Jelly" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                        for b, c in pairs(game:GetService("Workspace").Items:GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Jelly" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                            end
+                        end
+                    )
+                end
+            end
+        )
+        getgenv().autopickupVoidShard = false
         l:CreateToggle(
             "Auto PickUp Void Shard",
             function(m)
