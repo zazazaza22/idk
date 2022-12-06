@@ -210,7 +210,7 @@ spawn(
                 end
             end
         )
-                getgenv().autopickupCookedMeat = false
+        getgenv().autopickupCookedMeat = false
         l:CreateToggle(
             "Auto PickUp Cooked Meat",
             function(m)
@@ -532,7 +532,7 @@ spawn(
                 end
             end
         )
-                getgenv().autopickupRawIron = false
+        getgenv().autopickupRawIron = false
         l:CreateToggle(
             "Auto PickUp Raw Iron",
             function(m)
@@ -946,7 +946,7 @@ spawn(
                 end
             end
         )
-                getgenv().autopickupIron = false
+        getgenv().autopickupIron = false
         l:CreateToggle(
             "Auto PickUp Void Shard",
             function(m)
@@ -4086,7 +4086,7 @@ spawn(
         bE:CreateButton(
             "Discord",
             function()
-                setclipboard("https://discord.gg/YT8pWBws7G")
+                setclipboard("")
             end
         )
         bE:CreateButton(
