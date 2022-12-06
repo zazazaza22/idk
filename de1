@@ -210,6 +210,52 @@ spawn(
                 end
             end
         )
+                getgenv().autopickupCookedMeat = false
+        l:CreateToggle(
+            "Auto PickUp Cooked Meat",
+            function(m)
+                getgenv().autopickupCookedMeat = m
+                if m then
+                    spawn(
+                        function()
+                            while autopickupCookedMeat do
+                                wait()
+                                pcall(
+                                    function()
+                                        local n = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                                        local o = game:GetService("ReplicatedStorage")
+                                        for b, c in pairs(game:GetService("Workspace"):GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Cooked Meat" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                        for b, c in pairs(game:GetService("Workspace").Items:GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Cooked Meat" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                            end
+                        end
+                    )
+                end
+            end
+        )
         getgenv().autopickuplog = false
         l:CreateToggle(
             "Auto PickUp Log",
@@ -472,6 +518,52 @@ spawn(
                                                     c:IsA("UnionOpreation")
                                              then
                                                 if c.Name == "Iron Bar" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                            end
+                        end
+                    )
+                end
+            end
+        )
+                getgenv().autopickupRawIron = false
+        l:CreateToggle(
+            "Auto PickUp Raw Iron",
+            function(m)
+                getgenv().autopickupRawIron = m
+                if m then
+                    spawn(
+                        function()
+                            while autopickupRawIron do
+                                wait()
+                                pcall(
+                                    function()
+                                        local n = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                                        local o = game:GetService("ReplicatedStorage")
+                                        for b, c in pairs(game:GetService("Workspace"):GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Raw Iron" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                        for b, c in pairs(game:GetService("Workspace").Items:GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Raw Iron" then
                                                     if (n.Position - c.Position).Magnitude < 50 then
                                                         game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
                                                     end
@@ -840,6 +932,52 @@ spawn(
                                                     c:IsA("UnionOpreation")
                                              then
                                                 if c.Name == "Pink Diamond" or c.Name:find("Pink") then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                            end
+                        end
+                    )
+                end
+            end
+        )
+                getgenv().autopickupIron = false
+        l:CreateToggle(
+            "Auto PickUp Void Shard",
+            function(m)
+                getgenv().autopickupVoidShard = m
+                if m then
+                    spawn(
+                        function()
+                            while autopickupVoidShard do
+                                wait()
+                                pcall(
+                                    function()
+                                        local n = game:GetService("Players").LocalPlayer.Character.HumanoidRootPart
+                                        local o = game:GetService("ReplicatedStorage")
+                                        for b, c in pairs(game:GetService("Workspace"):GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Void Shard" then
+                                                    if (n.Position - c.Position).Magnitude < 50 then
+                                                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
+                                                    end
+                                                end
+                                            end
+                                        end
+                                        for b, c in pairs(game:GetService("Workspace").Items:GetChildren()) do
+                                            if
+                                                c:FindFirstChild("Pickup") and c:IsA("BasePart") or
+                                                    c:IsA("UnionOpreation")
+                                             then
+                                                if c.Name == "Void Shard" then
                                                     if (n.Position - c.Position).Magnitude < 50 then
                                                         game:GetService("ReplicatedStorage").Events.Pickup:FireServer(c)
                                                     end
