@@ -24,7 +24,7 @@ spawn(
         local j =
             loadstring(game:HttpGet("https://raw.githubusercontent.com/zazazaza22/clone-devil-Hub/main/Devil%20Hub%20ui", true))()
         local k =
-            j:CreateWindow("idk", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
+            j:CreateWindow("Cheater Si Biran", game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name)
         local l = k:CreateTab("Pick Up")
         getgenv().autopickupitems = false
         l:CreateToggle(
